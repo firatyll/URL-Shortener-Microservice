@@ -4,7 +4,7 @@ const isValidURL = require("../helpers/isValid")
 let shorturls=[]
 router.post("/api/shorturl" ,(req,res)=>{
     const longurl = req.body.url
-    if(isValidURL(longurl)){
+    if(!isValidURL(longurl)){
         return res.json({
             error : "invalid url"
         })
